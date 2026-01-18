@@ -1,0 +1,35 @@
+# Zig 编译产物
+.zig-cache/
+zig-out/
+*.zig.c
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+*.uf2
+
+# IDE 配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+
+# 调试文件
+*.gdb
+*.gdb_history
+
+# 文档生成文件
+docs/_build/
+docs/.doctrees/
