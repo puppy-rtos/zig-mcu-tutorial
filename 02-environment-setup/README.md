@@ -69,7 +69,7 @@ Hello, Zig!
 - https://course.ziglang.cc/environment/install-environment
 
 ## 下节预告
-快速在 MCU 上运行 Zig 程序
+[快速在 MCU 上运行 Zig 程序](../03-quick-mcu-run/README.md)
 
 ---
 
