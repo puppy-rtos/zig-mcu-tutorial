@@ -31,7 +31,9 @@
 ├── quick-mcu-run.md          # 详细教程文档
 ├── example-project/
 │   ├── src/
-│   │   └── main.zig         # STM32F407 示例代码
+│   │   ├── main.zig         # 主程序文件（Zig）
+│   │   ├── startup.zig      # 启动文件（Zig 实现）
+│   │   └── link.ld          # 链接脚本
 └── README.md                # 本文件
 ```
 
@@ -45,13 +47,12 @@
 
 ```bash
 cd example-project
-gcc -c startup_stm32f407xx.s -o startup_stm32f407xx.o
-zig build-exe src/main.zig -target thumb-freestanding-none -mcpu cortex_m4 -T linker.ld startup_stm32f407xx.o -O ReleaseSmall
+zig build-exe src/startup.zig -target thumb-freestanding-none -mcpu cortex_m4 -T src/link.ld -O ReleaseSmall --name stm32f407
 ```
 
 **预期输出**：
 ```
-生成 main.elf 和 main.bin 文件
+生成 stm32f407（ELF 格式）文件
 ```
 
 ## 常见问题
@@ -62,14 +63,22 @@ zig build-exe src/main.zig -target thumb-freestanding-none -mcpu cortex_m4 -T li
 ### Q2：如何验证生成的二进制文件
 **解决方案**：可以使用 `objdump` 或 `readelf` 工具查看生成的 ELF 文件信息
 
+### Q3：LED 不闪烁
+**解决方案**：
+1. 检查 LED 连接的引脚号是否正确
+2. 确保对应的 GPIO 时钟已被正确使能
+3. 调整延迟函数中的 `cycles_per_ms` 值，使其适应实际的系统时钟频率
+
 ## 配套资源
 - 示例代码：[example-project/src/main.zig](example-project/src/main.zig)
+- 启动文件：[example-project/src/startup.zig](example-project/src/startup.zig)
+- 链接脚本：[example-project/src/link.ld](example-project/src/link.ld)
 
 ## 参考资料
 - https://ziglang.org/documentation/master/
 
 ## 下节预告
-STM32F407 基础外设开发
+Zig 语言基础（了解嵌入式开发必备语法）
 
 ---
 
