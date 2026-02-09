@@ -197,7 +197,7 @@ zig build-exe src/startup.zig -target thumb-freestanding-none -mcpu cortex_m4 -T
 
 ## 📢 下节预告
 
-Zig 嵌入式开发进阶技巧
+中断系统实战：按键控制 LED
 
 ---
 
