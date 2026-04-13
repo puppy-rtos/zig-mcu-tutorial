@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "f407",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/stm32f407",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "_start",
+            "targetId": "stm32f407ve",
+            "cmsisPack": "E:\\MyWorkspace\\zig-leaning\\zboot\\stm32-zboot\\Keil.STM32F4xx_DFP.2.14.0-small.pack",
+            "servertype": "pyocd",
+            "armToolchainPath": "D:\\Progrem\\arm-gnu-toolchain-12.2.rel1\\bin",
+            "gdbPath": "D:\\Progrem\\arm-gnu-toolchain-12.2.rel1\\bin\\arm-none-eabi-gdb.exe",
+        }
+    ]
+}
